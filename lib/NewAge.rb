@@ -2,6 +2,11 @@
 
 require_relative "./NewAge/version.rb"
 
+# @see NewAge::Age#initialize
+def NewAge( opts=nil )
+  NewAge::Age.new opts
+end
+
 module NewAge
 
   module Helpers
