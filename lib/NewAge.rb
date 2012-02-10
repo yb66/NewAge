@@ -38,6 +38,8 @@ module NewAge
           raise ArgumentError, %q!The string wasn't in a format NewAge recognises, try `n years m months`!
       end
       
+      age = {years: 0, months: 0}.merge age # to stop errors from nils
+      
       raise ArgumentError, "There are only 12 months in a year." if age[:months] >= 12
       
       raise ArgumentError, "The longest confirmed human life span was Jeanne Calment's at 122 years, 164 days. I doubt you need more than that." if age[:years] >= 122 && age[:months] >= 7
