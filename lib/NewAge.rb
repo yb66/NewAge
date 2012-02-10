@@ -69,6 +69,8 @@ module NewAge
       @age = DEFAULTS.merge opts
     end
     
+    attr_accessor :age
+    
 
     # @param [optional, String] format A sprintf format string.
     def to_s( format=nil )
