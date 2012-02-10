@@ -12,9 +12,17 @@ Handling age as an input is pain. Should it be 12.5? 12 years? Two separate fiel
 
     NewAge("72 y 6m").to_s #=> "72 years 6 months"
     NewAge("72 y 6m").to_s( "%d YEARS" ) #=> "72 YEARS"
-    
 
-There's nothing but years and months as that is all I need for now.
+    puts NewAge "12.5"     #=> 12 years 5 months
+    # No, I don't think it should be 6 months.
+
+    puts NewAge "12.11"    #=> 12 years 11 months
+    puts NewAge "12 11"    #=> 12 years 11 months
+    puts NewAge "12-11"    #=> 12 years 11 months
+    puts NewAge "12"       #=> 12 years 0 months
+    puts NewAge "12 m"     #=> 0 years 12 months
+
+There's nothing but years and months as that is all I need for now. The validation is not very strict, just enough to let two numbers in that are recognised as a year and a month. Don't push it.
 
 ## Licence ##
 
