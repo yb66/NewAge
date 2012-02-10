@@ -15,18 +15,36 @@ describe "Age" do
     context "Given invalid data" do
       context "i.e. no data at all"
         context "no arguments" do
-          subject { NewAge::Age.parse }
-          pending "it should probably throw a wobbly"
+          it "should probably throw a wobbly" do
+            expect { NewAge::Age.parse }.to raise_error(ArgumentError)
+          end
         end
         context "nil argument" do
-          subject { NewAge::Age.parse nil }
-          pending "it should probably throw a wobbly"
+          it "should probably throw a wobbly" do
+            expect { NewAge::Age.parse nil }.to raise_error(ArgumentError)
+          end
         end
       end
       context "i.e. bad data" do
-        let(:bad_data) { "Hacky sack" }
-        subject { NewAge::Age.parse bad_data }
-        pending "it should probably throw a wobbly"
+        context "Silly things" do
+          let(:bad_data) { "Hacky sack" }
+          it "should probably throw a wobbly" do
+            expect { NewAge::Age.parse bad_data }.to raise_error(ArgumentError)
+          end
+        end
+        context "Someone with no age" do
+          let(:bad_data) { "0y 0m" }
+          it "should probably throw a wobbly" do
+            expect { NewAge::Age.parse bad_data }.to raise_error(ArgumentError)
+          end
+        end
+        context "Someone far too old to be human" do
+          let(:bad_data) { "123y 7m" }
+          it "should probably throw a wobbly" do
+            expect { NewAge::Age.parse bad_data }.to raise_error(ArgumentError)
+          end
+        end
+        
       end
     end
     

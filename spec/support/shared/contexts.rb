@@ -12,9 +12,9 @@ module NewAge
         y_specifier = ["year", "years", "y", "ys", "yrs", "" ]
         m_specifier = ["month", "months", "m", "ms", "mths", "" ]
         
-        yn = ((1..123).to_a.shuffle[0 .. y_specifier.length - 2 ] << 0).shuffle 
+        yn = ((1..121).to_a.shuffle[0 .. y_specifier.length - 2 ]).shuffle 
         
-        mn = ((1..11).to_a.shuffle[0 .. m_specifier.length - 2 ] << 0).shuffle 
+        mn = ((1..11).to_a.shuffle[0 .. m_specifier.length - 2 ]).shuffle 
         
         n_spread = yn.flat_map{|y| mn.map{|m| [y,m] }} + (yn * (y_specifier.length - 1)).map{|y| [y,0]} + (mn * ( m_specifier.length - 1)).map{|m| [0,m]} 
         
