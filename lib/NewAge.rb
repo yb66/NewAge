@@ -54,6 +54,16 @@ module NewAge
     
     DEFAULTS = {years: 0, months: 0}
     
+    FORMAT = "%d years %d months"
+    
+    def format=( s )
+      @format = s
+    end
+    
+    def format
+      @format ||= FORMAT
+    end
+    
     # @overload new( Hash )
     #   @param [Hash] opts Options hash
     #   @option opts [Integer] years
@@ -74,7 +84,7 @@ module NewAge
 
     # @param [optional, String] format A sprintf format string.
     def to_s( format=nil )
-      format ||= "%d years %d months"
+      format ||= self.format
       sprintf format, @age[:years], @age[:months]
     end
   end

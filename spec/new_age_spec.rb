@@ -13,7 +13,7 @@ describe "Age" do
       end
     end
     context "Given invalid data" do
-      context "i.e. no data at all"
+      context "i.e. no data at all" do
         context "no arguments" do
           it "should probably throw a wobbly" do
             expect { NewAge::Age.parse }.to raise_error(ArgumentError)
@@ -47,7 +47,7 @@ describe "Age" do
         
       end
     end
-    
+  end
   describe "to_s" do
     context "Given no format" do
       NewAge::RSpec::Helpers.all_together.each do |input,(ymd,output)|

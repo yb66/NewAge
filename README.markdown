@@ -22,7 +22,7 @@ Handling age as an input is pain. Should it be 12.5? 12 years? Two separate fiel
     puts NewAge "12"       #=> 12 years 0 months
     puts NewAge "12 m"     #=> 0 years 12 months
 
-There's nothing but years and months as that is all I need for now. The validation is not very strict, just enough to let two numbers in that are recognised as a year and a month. Don't push it.
+There's nothing but years and months as that is all I need for now. The validation is not very strict, just enough to let two numbers in that are recognised as a year and a month. 
 
 ## Licence ##
 
