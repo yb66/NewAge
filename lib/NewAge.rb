@@ -16,7 +16,7 @@ module NewAge
     # "n yrs m mths" or something similar. It may accept things like "11 minutes" (it will think you mean 11 months) because it's not *that* concerned about being exact, so be careful.
     # @example
     #   parse( "15 y 6 m" ) => {years: 15, months: 6}
-    # @params [String] s
+    # @param [String] s
     # @return [Hash]
     def parse( s )
       raise ArgumentError, "Must provide a string to parse!" if s.nil? || s.empty? 
