@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Iain Barnett"]
   s.email       = ["iainspeed@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{People's ages in years and months}
-  s.description = %q{Just simple}
+  s.summary     = %q{Handling the input and output of people's ages in years and months}
+  s.description = %q{Handling the input and output of people's ages in years and months}
 
   s.rubyforge_project = "NewAge"
 
@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   s.add_development_dependency "rspec"
+  s.add_development_dependency "yard"
 end
