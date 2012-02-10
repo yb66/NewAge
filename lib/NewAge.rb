@@ -1,21 +1,11 @@
 # encoding: UTF-8
 
-require "NewAge/version"
+require_relative "./NewAge/version.rb"
 
 module NewAge
-  class Age
-    DEFAULTS = {years: 0, months: 0}
-    
-    # @param [Hash] opts Options hash
-    # @option opts [Integer] years
-    # @option opts [Integer] months
-    def initialize( opts=nil )
-      opts = Age.parse(opts) if opts.kind_of? String
-      opts ||= {}
-      @age = DEFAULTS.merge opts
-    end
-    
-    def self.parse( s )
+
+  module Helpers
+    def parse( s )
       age = {}
       case s
         when /^(\d+)$/ then 
@@ -31,6 +21,23 @@ module NewAge
       
       age
     end
+  end
+  
+  class Age
+    extend Helpers
+    
+    DEFAULTS = {years: 0, months: 0}
+    
+    # @param [Hash] opts Options hash
+    # @option opts [Integer] years
+    # @option opts [Integer] months
+    def initialize( opts=nil )
+      opts = Age.parse(opts) if opts.kind_of? String
+      opts ||= {}
+      @age = DEFAULTS.merge opts
+    end
+    
+
     
     def to_s( format=nil )
       format ||= "%d years %d months"

@@ -31,7 +31,24 @@ describe "Age" do
     end
     
   describe "to_s" do
-    
+    context "Given no format" do
+      NewAge::RSpec::Helpers.all_together.each do |input,(ymd,output)|
+        it "should return an output of #{output} given #{input}" do
+          age = NewAge::Age.new( input )
+          age.to_s.should == output
+        end
+      end
+    end
+    context "Given a format" do
+      context " of n yrs n mths" do      
+        NewAge::RSpec::Helpers.all_together.each do |input,(ymd,output)|
+          it "should return an output of #{ymd[0]} yrs #{ymd[1]} mnths given #{input}" do
+            age = NewAge::Age.new( input )
+            age.to_s( "%d yrs %d mnths" ).should == "#{ymd[0]} yrs #{ymd[1]} mnths"
+          end
+        end
+      end
+    end
   end
   
 end
