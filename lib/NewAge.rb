@@ -64,6 +64,15 @@ module NewAge
       @format ||= FORMAT
     end
     
+    
+    def []( key )
+      @age[key]
+    end
+    
+    def []=( key, value )
+      @age[key] = value
+    end
+    
     # @overload new( Hash )
     #   @param [Hash] opts Options hash
     #   @option opts [Integer] years
