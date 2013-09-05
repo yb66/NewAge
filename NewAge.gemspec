@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = NewAge::VERSION
   s.authors     = ["Iain Barnett"]
   s.email       = ["iainspeed@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/yb66/NewAge"
   s.summary     = %q{Handling the input and output of people's ages in years and months}
   s.description = %q{Handling the input and output of people's ages in years and months}
 
